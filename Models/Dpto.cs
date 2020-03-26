@@ -24,7 +24,7 @@ namespace SyscafeAppPwa.Models
         public static async Task<string> GetResponse()
         {
             //-----https://cors-anywhere.herokuapp.com/
-            string _url    = "http://localhost:55862/Service1.svc";
+            string _url    = "https://wstest123.azurewebsites.net/Service1.svc";
             string _action = "http://tempuri.org/IWSPersonas/ObtenerPersona";
             string soapEnvelopeXml = GetSoapEnvelope();            
             string soapResult = "";
