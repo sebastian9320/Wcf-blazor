@@ -1,0 +1,45 @@
+﻿@page "/"
+@using SyscafeAppPwa.Models
+
+<h1> SysCafe App </h1>
+
+Welcome to your new app.
+
+<button class="btn btn-lg btn-primary" @onclick="ViewData"> Get Data !</button>
+
+@if (Data != null)
+{
+    <div>this is the response: </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Llave</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (KeyValuePair<string, string> entry in Data)
+            {
+                <tr>
+                    <td>@entry.Key</td>
+                    <td>@entry.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+   
+}
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+
+@code {
+    public Dictionary<string, string> Data { get; set; }
+    public string Test { get; set; }
+
+    public async Task ViewData(MouseEventArgs e)
+    {
+        //Data = await Dpto.GetResponse();
+        Test = await Dpto.GetResponse();
+    }
+}

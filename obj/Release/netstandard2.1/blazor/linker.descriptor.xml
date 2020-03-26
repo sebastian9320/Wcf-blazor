@@ -1,0 +1,5 @@
+﻿<linker>
+  <assembly fullname="SyscafeAppPwa">
+    <type fullname="*" required="true" />
+  </assembly>
+</linker>
